@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\GestionPromotionModel;
+use App\Models\GestionPromotionModel;
 
 class GestionPromotion extends Controller
 {
@@ -14,7 +14,10 @@ class GestionPromotion extends Controller
      */
     public function index()
     {
-        
+        $data =  GestionPromotionModel ::all();
+        return view('index',[
+            'data'=> $data
+        ]);
     }
 
     /** 
@@ -31,10 +34,10 @@ class GestionPromotion extends Controller
      */
     public function store(Request $request)
     {
-        $promotion = new GestionPromotion();
-        $promotion->namePromotion = $request->input('namePromotion');
+        $promotion = new GestionPromotionModel();
+        $promotion->namePromotion = $request->input('testName');
         $promotion->save();
-        return redirect()->route('index');
+        return redirect()->route('test.index');
     }
 
     /**
