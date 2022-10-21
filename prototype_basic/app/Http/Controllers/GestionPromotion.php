@@ -48,7 +48,7 @@ class GestionPromotion extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

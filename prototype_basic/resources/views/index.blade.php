@@ -8,24 +8,23 @@
 </head>
 <body>
     <h1>hello</h1>
-    <table>
+    <table class="table">
         <thead>
-            <tr>
-                <th>namePromotion</th>
-                <th>edit</th>
-            </tr>
-
+          <tr>
+            <th scope="col">name Promotion</th>
+            <th scope="col">edit</th>
+          </tr>
         </thead>
-    </table>
-    <tbody>
-        
-        <tr>
+        <tbody>
             @foreach ($data as $item)
+          <tr>
             <td>{{$item['namePromotion']}}</td>
-            @endforeach
-        </tr>
-    
-    </tbody>
+            <td><a href="{{route('{id}')}}">edit</a></td>
+          </tr>
+          @endforeach
+
+        </tbody>
+      </table>
 
 </body>
 </html>
