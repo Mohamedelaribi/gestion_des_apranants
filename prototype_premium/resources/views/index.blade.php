@@ -8,8 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hell</h1>
-    <input type="text" id="textSearch">
+  <div id="data">
+    <input type="text" id="Search">
     <table class="table">
         <thead>
           <tr>
@@ -27,27 +27,7 @@
 
         </tbody>
       </table>
-      <script>
-
-        $(document).ready(function(){
-          $('#textSearch').on('keyup',function(){
-            var text = $('#textSearch').val();
-            $.ajax({
-              type: 'GET',
-              url: 'search_promotion',
-              data: {text:$('#textSearch').val()},
-              success: function(response){
-                response = Json.parse(response);
-                for(var partient of response){
-                  console.log(partient);
-                }
-              }
-              
-            });
-          });
-        });
-
-      </script>
-
+  </div>
+      <script type="text/javascript" src="{{ URL::asset('js/search.js') }}"></script>
 </body>
 </html>

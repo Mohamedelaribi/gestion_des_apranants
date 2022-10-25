@@ -49,10 +49,16 @@ class GestionPromotion extends Controller
         return redirect()->route('test.index');
     }
 
-    public function search_promotion(Request $request){
-        $text = $request-input('searchPromotion');
-        $searchSql = DB::table('gestion_promotion_models')->where('namePromotion','LIKE',"$text")->get();
-        return response()->json($searchSql);
+    public function search($name=null){ 
+        if($name == null){
+            $data =GestionPromotionModel::all();
+            return view('search',compact('data'));        }
+        else {
+            $data =GestionPromotionModel::where('namePromotion', 'like','%'.$name.'%')->get();
+            return view('search',compact('data'));
+
+        }
+
     }
 
     public function destroy($id)
