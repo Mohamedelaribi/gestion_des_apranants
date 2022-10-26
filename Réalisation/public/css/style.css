@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+.containt{
+    height: 70vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-top: 30vh;
+}
+.promotionLink{
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+    display: inline-block;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    background-color: blueviolet;
+}
+.getionPromotion{
+    display: block;
+}
+.addPromotion{
+    text-decoration: none;
+}
