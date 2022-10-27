@@ -16,5 +16,6 @@ Route::get('search/{name}',[GestionPromotion::class,'search']);
 Route::get('search',[GestionPromotion::class,'search']);
 
 
-
+Route::get('promotion/apprenant/{id}', [GestionApprenants::class, 'create']);
 Route::resource('apprenant', GestionApprenants::class);
+

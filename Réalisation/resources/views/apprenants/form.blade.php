@@ -8,5 +8,7 @@
             <input type="text" name="lastName" id="lastName">
             <label for="email">email</label>
             <input type="email" name="email" id="email">
+            <input type="hidden" value="{{$id}}" name="idPromotion">
+            <input type="submit" value="add">
         </form>
     </div>

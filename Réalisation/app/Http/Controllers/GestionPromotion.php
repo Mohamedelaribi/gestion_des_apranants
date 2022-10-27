@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\GestionPromotionModel;
+use App\Models\Apprenant;
+
 
 class GestionPromotion extends Controller
 {
@@ -36,8 +38,19 @@ class GestionPromotion extends Controller
     public function edit($id)
     {
         
-            $promotion = GestionPromotionModel::find($id);
-            return view('editForm',compact('promotion'));
+        $promotion = GestionPromotionModel::find($id);
+        $apprenants = Apprenant::
+        select(
+        'apprenants.firstName',
+        'apprenants.lastName',
+        'apprenants.email',
+        'apprenants.id as idAppronant',
+        'gestion_promotion_models.name',
+        'gestion_promotion_models.id as idPromotion')
+        ->rightJoin('gestion_promotion_models','gestion_promotion_models.idPromotion','=','apprenants.idPromotion')
+        ->where('gestion_promotion_models.id','=',$id)->get();
+        return view('editForm',compact('promotion'));
+
         
     }
 
@@ -63,6 +76,14 @@ class GestionPromotion extends Controller
 
     public function destroy($id)
     {
-        //
+    
     }
+
+    // public function selectApprenants($id){
+
+    //     $apprenants = Apprenant::select('apprenants.firstName','lastName','apprenats.id as idApprenants','gestion_promotion_models.id as idPromoion')
+    //     ->leftJoin('apprenants','apprenants.idPromotion','=','promotion.idPromotion')
+    //     ->where('promotion.id','=',)
+    //     return view('index');
+    // }
 }
