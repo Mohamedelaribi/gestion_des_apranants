@@ -4,7 +4,7 @@
   
 <div id="data">
   <div class="getionPromotion">
-        <a class="addPromotion" href="{{route('test.create')}}">ajouter promotion</a>
+        <a class="addPromotion" href="{{route('promotion.create')}}">ajouter promotion</a>
         <input type="text" id="Search">
   </div>
 
@@ -19,7 +19,7 @@
           @foreach ($data as $item)
         <tr>
           <td>{{$item['namePromotion']}}</td>
-          <td><a href="{{route('test.edit',$item->id)}}">edit</a></td>
+          <td><a href="{{route('promotion.edit',$item->id)}}">edit</a></td>
         </tr>
         @endforeach
 

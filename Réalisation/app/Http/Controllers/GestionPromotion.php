@@ -22,10 +22,10 @@ class GestionPromotion extends Controller
 
     public function store(Request $request)
     {
-        $updatePromotion = new GestionPromotionModel();
-        $updatePromotion->namePromotion = $request->input('testName');
-        $updatePromotion->save();
-        return redirect()->route('test.index');
+        $Promotion = new GestionPromotionModel();
+        $Promotion->namePromotion = $request->input('testName');
+        $Promotion->save();
+        return redirect()->route('promotion.index');
     }
 
     public function show($id)
@@ -46,7 +46,7 @@ class GestionPromotion extends Controller
         $updatePromotion = GestionPromotionModel::find($id);
         $updatePromotion->namePromotion = $request->input('newNamePromotion');
         $updatePromotion->save();
-        return redirect()->route('test.index');
+        return redirect()->route('promotion.index');
     }
 
     public function search($name=null){ 

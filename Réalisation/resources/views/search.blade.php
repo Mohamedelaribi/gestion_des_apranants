@@ -11,7 +11,7 @@
             @foreach ($data as $item)
           <tr>
             <td>{{$item['namePromotion']}}</td>
-            <td><a href="{{route('test.edit',$item->id)}}">edit</a></td>
+            <td><a href="{{route('promotion.edit',$item->id)}}">edit</a></td>
           </tr>
           @endforeach
 
