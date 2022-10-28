@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('apprenants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idPromotion')->constrained('gestion_promotion_models');
+            $table->foreignId('idPromotion')->constrained('gestion_promotion_models')->onDelete('cascade');
             $table->string('firstName');
             $table->string('lastName');
             $table->string('email');

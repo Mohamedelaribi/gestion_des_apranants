@@ -16,6 +16,7 @@ Route::get('search/{name}',[GestionPromotion::class,'search']);
 Route::get('search',[GestionPromotion::class,'search']);
 
 
-Route::get('promotion/apprenant/{id}', [GestionApprenants::class, 'create']);
+Route::get('promotion/apprenant/{id}', [GestionApprenants::class, 'create'])->name('apprenant_create');
+Route::get('promotion/{id}/edit', [UserController::class, 'index'])->name('user.index');
 Route::resource('apprenant', GestionApprenants::class);
 

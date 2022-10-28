@@ -15,7 +15,7 @@ class GestionApprenants extends Controller
 
     public function create($id)
     {
-        return view('apprenants.form',['id'=>$id]);
+        return view('apprenants.form',compact('id'));
     }
 
     public function store(Request $request)
@@ -38,13 +38,18 @@ class GestionApprenants extends Controller
 
     public function edit($id)
     {
+        $apprenant = Apprenant::find($id);
         
+        return view('apprenants.editFormApprenant',compact('apprenant'));
     }
 
 
     public function update(Request $request, $id)
     {
-        
+        $updateApprenant = Apprenant::find($id);
+        $updateApprenant->firstName = $request->input('newNameApprenant');
+        $updateApprenant->save();
+        return redirect('promotion'."/".$updateApprenant->idPromotion."/edit");
     }
 
 

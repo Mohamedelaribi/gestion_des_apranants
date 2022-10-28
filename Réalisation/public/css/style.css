@@ -24,8 +24,56 @@
     background-color: blueviolet;
 }
 .getionPromotion{
-    display: block;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
 }
 .addPromotion{
     text-decoration: none;
+    display: inline-block;
+    height: 40px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+#Search{
+    height: 40px;
+    width: 250px;
+    border-radius: 40px;
+    border: none;
+    padding:12px;
+}
+
+#data{
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+    border-radius: 10px;
+    padding: 60px 40px;
+}
+.table{
+    width: 70%;
+    margin: 70px 160px;
+}
+
+.addPromotionForm{
+    height: 40vh;
+    width: 500px;
+    background-color: aqua;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    margin: 100px 400px;
+    padding-top: 10%;
+}
+.addPromotionInput{
+    border: none;
+    height: 40px;
+    width: 240px;
+    border-radius: 30px;
+    padding: 10px;
 }

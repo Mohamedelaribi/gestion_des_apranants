@@ -1,5 +1,6 @@
-{{-- @extends('layout') --}}
-    <div class="formApprenant">
+@extends('layout')
+@section('formApprenant')
+       <div class="formApprenant">
         <form action="{{route('apprenant.store')}}" method="post">
             @csrf
             <label for="firstName">Nom:</label>
@@ -12,3 +13,5 @@
             <input type="submit" value="add">
         </form>
     </div>
+@endsection
+ 
