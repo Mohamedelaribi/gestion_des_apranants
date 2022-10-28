@@ -7,22 +7,24 @@
         <a class="addPromotion" href="{{route('promotion.create')}}">ajouter promotion</a>
         <input type="text" id="Search">
   </div>
-
-  <table class="table">
+  
+    </table>
+    <table class="table">
       <thead>
         <tr>
-          <th scope="col">name Promotion</th>
-          <th scope="col">edit</th>
+          <th scope="col">Nom promotion</th>
+          <th scope="col">Edit Promotion</th>
+          <th scope="col">Delete Promotion </th>
         </tr>
       </thead>
       <tbody>
-          @foreach ($data as $item)
+        @foreach ($data as $item)
         <tr>
           <td>{{$item['namePromotion']}}</td>
           <td><a href="{{route('promotion.edit',$item->id)}}">edit</a></td>
+          <td><a href="{{route('promotion.edit',$item->id)}}">Delete</a></td>
         </tr>
         @endforeach
-
       </tbody>
     </table>
 </div>

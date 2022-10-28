@@ -1,4 +1,3 @@
-{{-- @extends('layout') --}}
     <div class="formApprenant">
         <form action="{{route('apprenant.store')}}" method="post">
             @csrf

@@ -38,13 +38,19 @@ class GestionApprenants extends Controller
 
     public function edit($id)
     {
-        
+        $apprenant = Apprenant::find($id);
+        return view('apprenants.formEdit',compact('apprenant'));
     }
 
 
     public function update(Request $request, $id)
     {
-        
+        $updateApprenant = Apprenant::find($id);
+        $updateApprenant->firstName = $request->input('newFirstName');
+        $updateApprenant->lastName = $request->input('newLastName');
+        $updateApprenant->email = $request->input('newEmail');
+        $apprenant->save();
+        return redirect('apprenants.form');
     }
 
 
