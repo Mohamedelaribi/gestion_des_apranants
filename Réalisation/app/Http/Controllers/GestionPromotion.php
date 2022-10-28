@@ -44,9 +44,15 @@ class GestionPromotion extends Controller
         'apprenants.firstName',
         'apprenants.lastName',
         'apprenants.email',
+<<<<<<< HEAD
         'apprenants.id as idApprenant',
         'gestion_promotion_models.namePromotion',
         'gestion_promotion_models.id as idPromotion')
+=======
+        'apprenants.id as id_Apprenant',
+        'gestion_promotion_models.namePromotion',
+        'gestion_promotion_models.id as id_Promotion')
+>>>>>>> 536e1e210950a55d21512a0436942cb33d75e3ff
         ->rightJoin('gestion_promotion_models','gestion_promotion_models.id','=','apprenants.idPromotion')
         ->where('gestion_promotion_models.id','=',$id)->get();
         return view('editForm',compact('promotion','apprenants'));

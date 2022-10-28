@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 @extends('layout')
 @section('formApprenant')
        <div class="formApprenant">
+=======
+    <div class="formApprenant">
+>>>>>>> 536e1e210950a55d21512a0436942cb33d75e3ff
         <form action="{{route('apprenant.store')}}" method="post">
             @csrf
             <label for="firstName">Nom:</label>
