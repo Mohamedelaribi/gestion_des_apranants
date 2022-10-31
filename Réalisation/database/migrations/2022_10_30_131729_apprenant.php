@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('apprenants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idPromotion')->constrained('gestion_promotion_models')->onDelete('cascade');
+            $table->foreignId('idPromotion')->constrained('promotions')->onDelete('cascade');
             $table->string('firstName');
             $table->string('lastName');
             $table->string('email');
@@ -30,6 +30,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apprenants');
+        Schema::drop('apprenants');
+
     }
 };

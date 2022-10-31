@@ -2,7 +2,7 @@
 @section('containt')
 <body>
     <div class="containt">
-        <a class="promotionLink" href="{{route('promotion.index')}}">Promotions</a>
+        <a href="{{route('promotion.index')}}"><button class="promotionLink">Promotions</button></a>
     </div>
     
 </body>

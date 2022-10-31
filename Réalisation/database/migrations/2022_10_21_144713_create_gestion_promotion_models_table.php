@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gestion_promotion_models', function (Blueprint $table) {
+        Schema::create('promotions', function (Blueprint $table) {
             $table->id();
             $table->string('namePromotion');
+            $table->string('Description');
             $table->timestamps();
         });
     }

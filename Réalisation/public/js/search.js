@@ -7,7 +7,7 @@ search_input.addEventListener("keyup", () =>{
             return res.text();
         }).then((data) => {
             console.log(data);
-            document.getElementsByClassName('table')[0].innerHTML = data;
+            document.getElementsByClassName('containerPromotion')[0].innerHTML = data;
 
         }
         )

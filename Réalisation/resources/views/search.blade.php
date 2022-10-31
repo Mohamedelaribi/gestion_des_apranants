@@ -1,6 +1,29 @@
 
 
-    <table class="table">
+
+
+  @foreach ($data as $item)
+
+  <div class="promotionDetail">
+    <div class="NamePromotionDiv">
+      <h3 class="namePromotion">
+        {{$item['namePromotion']}}
+      </h1>
+    </div>
+    <p class="descriptionPromotion">
+      {{$item['Description']}}
+    </p>
+    <div class="action">
+      <a href="{{route ('promotion.edit',$item->id)}}"><button class="actionButton edit">edit</button></a>
+    <a href="{{route ('promotion.edit',$item->id)}}"><button class="actionButton delete">delete</button></a>
+  </div>
+  </div>
+
+  @endforeach
+</div>
+
+
+    {{-- <table class="table">
         <thead>
           <tr>
             <th scope="col">name Promotion</th>
@@ -16,11 +39,5 @@
           @endforeach
 
         </tbody>
-      </table>
-{{-- @foreach ($data as $row)
-    Id : {{ $row->id }} 
-    Name : {{ $row->namePromotion }}
-    <a href="/delete?id={{ $row->id }}">Delete </a> 
-    <a href="/update_promotion/{{ $row->id }}">/ Edit </a> 
-    <br>
-@endforeach --}}
+      </table> --}}
+
