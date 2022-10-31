@@ -39,8 +39,16 @@
                             <td>{{$apprenant['firstName']}}</td>
                             <td>{{$apprenant['lastName']}}</td>
                             <td>{{$apprenant['email']}}</td>
-                            <td><a href="{{route('apprenant.edit',$apprenant->idApprenant)}}">Edit</a></td>
-                            <td><a href="{{route('apprenant.edit',$apprenant->idApprenant)}}">Delete</a></td>
+                            <td><a href="{{route('apprenant.edit',$apprenant->idApprenant)}}"><button class="actionButton edit">Edite</button></a></td>
+                            <td>
+                              <form action="{{route('apprenant.destroy',$apprenant->idApprenant)}}" method="post">
+                              @csrf
+                              @method('DELETE')
+                              <button class="actionButton delete">Delete</button>
+                              </form>
+                              </td>
+
+                            <td>
                         </tr>
                 @endforeach 
                 @endif

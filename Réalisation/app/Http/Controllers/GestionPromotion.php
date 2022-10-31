@@ -79,7 +79,10 @@ class GestionPromotion extends Controller
 
     public function destroy($id)
     {
-        return  'hello';
+        Promotion::destroy($id);
+        return redirect()->route('promotion.index');
+        
+        
 
     }
 

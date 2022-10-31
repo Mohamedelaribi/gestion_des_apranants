@@ -10,7 +10,7 @@ Route::get('/', function(){
     return view('home');
 });
 Route::resource('promotion', GestionPromotion::class);
-Route::get('promotion/{id}', [GestionPromotion::class, 'destroy'])->name('deletePromotion');
+// Route::get('promotion/{id}', [GestionPromotion::class, 'destroy'])->name('deletePromotion');
 
 Route::get('search/{name}',[GestionPromotion::class,'search']);
 

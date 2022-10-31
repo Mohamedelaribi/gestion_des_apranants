@@ -71,6 +71,10 @@ class GestionApprenants extends Controller
 
     public function destroy($id)
     {
+        $apprenant = Apprenant::find($id);
+        $apprenant::destroy($id);
+        // $idPromotion = $request->input('idPromotion');
+        return redirect('promotion'."/".$apprenant->idPromotion."/edit");
         
     }
 }

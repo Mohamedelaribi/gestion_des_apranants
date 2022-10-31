@@ -25,7 +25,12 @@
         </p>
         <div class="action">
         <a href="{{route ('promotion.edit',$item->id)}}"><button class="actionButton edit">edit</button></a>
-        <a href="{{route ('deletePromotion',$item->id)}}"><button class="actionButton delete">delete</button></a>
+        <form action="{{route ('promotion.destroy',$item->id)}}" method="post">
+          @csrf
+          @method('DELETE')
+          <a href=""><button class="actionButton delete">delete</button></a>
+        </form>
+        
       </div>
       </div>
 
